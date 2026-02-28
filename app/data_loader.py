@@ -7,9 +7,17 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-BASE_URL = os.getenv("BASE_URL_API")
+BASE_URL = os.getenv("BASE_API_URL")
 
 def fetch_data(endpoint, params=None):
+    """
+    This functions fetch data from the API.
+    And return as a Dataframe.
+
+    Args:
+        endpoint (str): API endpoint
+        params (dict): Optional query parameters for the api.
+    """
     if params is None: 
         params = {}
     url = f"{BASE_URL}{endpoint}"
